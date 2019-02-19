@@ -28,7 +28,7 @@ class TennisRacket{
 	}
 	TennisRacket serve() {
 		TennisRacket kapotteRacket = new TennisRacket();
-		TennisRacket heleRacket = new TennisRacket();
+		TennisRacket heelRacket = new TennisRacket();
 		kapotteRacket.kapot = true;
 		Random random = new Random();
 		int serveSpeed = serveBoost + random.nextInt(40);
@@ -38,7 +38,7 @@ class TennisRacket{
 			return kapotteRacket;
 		}
 		else {
-			return heleRacket;
+			return heelRacket;
 		}
 	}
 }
