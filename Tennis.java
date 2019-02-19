@@ -11,13 +11,14 @@ public class Tennis {
 		racket1.describe();
 		racket1.serve();
 		
-		racket2.describe();
+//		racket2.describe();
 		racket2.serveBoost = 120;
 		racket2.serve();
 	}
 }
 
 class TennisRacket{
+	boolean kapot = false;
 	String brand;
 	int headSize;
 	int weight;
@@ -25,9 +26,19 @@ class TennisRacket{
 	void describe() {
 		System.out.println("Je racket is een " + brand + " van " + headSize + "cm^2 en "+ weight + " gram.");
 	}
-	void serve() {
+	TennisRacket serve() {
+		TennisRacket kapotteRacket = new TennisRacket();
+		TennisRacket heleRacket = new TennisRacket();
+		kapotteRacket.kapot = true;
 		Random random = new Random();
 		int serveSpeed = serveBoost + random.nextInt(40);
 		System.out.println("Je serveert " + serveSpeed + "km/u met dit racket.");
+		if (serveSpeed > 180) {
+			System.out.println("Je racket is kapot.");
+			return kapotteRacket;
+		}
+		else {
+			return heleRacket;
+		}
 	}
 }
